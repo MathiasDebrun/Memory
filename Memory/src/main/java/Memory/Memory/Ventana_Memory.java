@@ -26,6 +26,7 @@ public class Ventana_Memory extends JFrame {
 			}
 		});
 	}
+	//
 
 	/**
 	 * Create the frame.
