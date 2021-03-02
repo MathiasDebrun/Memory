@@ -176,14 +176,7 @@ public class Ventana_Memory extends JFrame {
 					
 				} else {
 					
-					try {
-//						boton.setIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/6.png"));
-						TimeUnit.SECONDS.sleep(1);
-						
-					} catch (InterruptedException e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
-					}
+				
 					
 					for (int i=0; i<16; i++) {
 						 if (seleccionados[i]) {
@@ -195,8 +188,17 @@ public class Ventana_Memory extends JFrame {
 					}
 				 }
 			
-				
+				try {
+//					boton.setIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/6.png"));
+					TimeUnit.SECONDS.sleep(1);
+					
+				} catch (InterruptedException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 			}
+			
+			
 			});
 		boton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -502,14 +504,14 @@ public class Ventana_Memory extends JFrame {
 			
 			botona.setIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/in.jpeg"));
 			botonb.setIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/in.jpeg"));
-			try {
-//				boton.setIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/6.png"));
-				TimeUnit.SECONDS.sleep(1);
-				
-			} catch (InterruptedException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
+//			try {
+////				boton.setIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/6.png"));
+//				TimeUnit.SECONDS.sleep(1);
+//				
+//			} catch (InterruptedException e1) {
+//				// TODO Auto-generated catch block
+//				e1.printStackTrace();
+//			}
 		}
 		
 	}
