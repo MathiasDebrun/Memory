@@ -17,6 +17,8 @@ import java.awt.event.ActionEvent;
 import java.awt.Color;
 import javax.swing.UIManager;
 import javax.swing.ButtonGroup;
+import javax.swing.JRadioButton;
+import javax.swing.JCheckBox;
 
 public class Ventana_Memory extends JFrame {
 
@@ -49,6 +51,7 @@ public class Ventana_Memory extends JFrame {
 	 * Create the frame.
 	 */
 	public Ventana_Memory() {
+		setTitle("Memory");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 547, 419);
 		contentPane = new JPanel();
@@ -57,7 +60,7 @@ public class Ventana_Memory extends JFrame {
 		contentPane.setLayout(null);
 		
 		JToggleButton boton = new JToggleButton("6");
-		boton.setSelectedIcon(null);
+		boton.setSelectedIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/6.png"));
 		boton.setBackground(UIManager.getColor("Button.background"));
 		boton.setForeground(Color.BLACK);
 		
@@ -72,6 +75,7 @@ public class Ventana_Memory extends JFrame {
 		contentPane.add(boton_1);
 		
 		JToggleButton boton_2 = new JToggleButton("3");
+		boton_2.setSelectedIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/3.png"));
 		boton_2.setBounds(146, 0, 122, 86);
 		contentPane.add(boton_2);
 		
@@ -105,7 +109,7 @@ public class Ventana_Memory extends JFrame {
 		contentPane.add(boton_9);
 		
 		JToggleButton boton_10 = new JToggleButton("7");
-		buttonGroup.add(boton_10);
+		
 		boton_10.setBounds(280, 196, 122, 86);
 		contentPane.add(boton_10);
 		
@@ -162,75 +166,79 @@ public class Ventana_Memory extends JFrame {
 		boton_13.setIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/in.jpeg"));
 		boton_14.setIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/in.jpeg"));
 		boton_15.setIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/in.jpeg"));
-		
+		boton.setSelectedIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/6.png"));
+		boton_1.setSelectedIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/6.png"));
+		boton_3.setSelectedIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/2.png"));
+		boton_14.setSelectedIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/2.png"));
+		boton_6.setSelectedIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/1.png"));
+		boton_8.setSelectedIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/1.png"));
+		boton_2.setSelectedIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/3.png"));
+		boton_13.setSelectedIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/3.png"));
+		boton_4.setSelectedIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/4.png"));
+		boton_12.setSelectedIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/4.png"));
+		boton_5.setSelectedIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/5.png"));
+		boton_11.setSelectedIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/5.png"));
+		boton_7.setSelectedIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/7.png"));
+		boton_10.setSelectedIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/7.png"));
+		boton_9.setSelectedIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/8.png"));
+		boton_15.setSelectedIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/8.png"));
 		boton.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent e) {
-				
-				boton.setIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/6.png"));
-				 
+		
 				if (primeravez) {
+					
 					primeravez=false;
 					seleccionados[0]=true;
-					
+
 					
 				} else {
-					
-				
+
 					
 					for (int i=0; i<16; i++) {
 						 if (seleccionados[i]) {
 							 
 							 comparar(boton, botones[i]);
+							 
 							 primeravez=true;
 							 seleccionados[i]=false;
 						 }
 					}
 				 }
 			
-				try {
-//					boton.setIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/6.png"));
-					TimeUnit.SECONDS.sleep(1);
-					
-				} catch (InterruptedException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
 			}
 			
 			
 			});
 		boton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				boton_1.setIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/6.png"));
+				
+				
+			
 				if (primeravez) {
 					primeravez=false;
 					seleccionados[0]=true;
 					
 				} else {
-					boton_1.setIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/6.png"));
-					try {
-						
-						TimeUnit.SECONDS.sleep(1);
-						
-					} catch (InterruptedException e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
-					}
+					;
+					
+					
 					for (int i=0; i<16; i++) {
 						 if (seleccionados[i]) {
 							 comparar(boton_1, botones[i]);
+							 
 							 primeravez=true;
 							 seleccionados[i]=false;
 						 }
 					}
 				}
+				
 			}});
 		
 		
 		boton_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				boton_3.setIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/2.png"));
+				
 				if (primeravez) {
 					primeravez=false;
 					seleccionados[3]=true;
@@ -248,7 +256,7 @@ public class Ventana_Memory extends JFrame {
 		});
 		boton_14.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				boton_14.setIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/2.png"));
+				
 				if (primeravez) {
 					primeravez=false;
 					seleccionados[14]=true;
@@ -266,8 +274,10 @@ public class Ventana_Memory extends JFrame {
 		});
 		boton_6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				boton_6.setIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/1.png"));
+				
+				
 				if (primeravez) {
+					
 					primeravez=false;
 					seleccionados[6]=true;
 					
@@ -284,7 +294,7 @@ public class Ventana_Memory extends JFrame {
 		});
 		boton_8.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				boton_8.setIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/1.png"));
+				
 				if (primeravez) {
 					primeravez=false;
 					seleccionados[8]=true;
@@ -303,7 +313,7 @@ public class Ventana_Memory extends JFrame {
 		
 		boton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				boton_2.setIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/3.png"));
+				
 				if (primeravez) {
 					primeravez=false;
 					seleccionados[2]=true;
@@ -321,7 +331,7 @@ public class Ventana_Memory extends JFrame {
 		});
 		boton_13.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				boton_13.setIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/3.png"));
+				
 				if (primeravez) {
 					primeravez=false;
 					seleccionados[13]=true;
@@ -339,7 +349,7 @@ public class Ventana_Memory extends JFrame {
 		});
 		boton_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				boton_4.setIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/4.png"));
+				
 				if (primeravez) {
 					primeravez=false;
 					seleccionados[4]=true;
@@ -357,7 +367,7 @@ public class Ventana_Memory extends JFrame {
 		});
 		boton_12.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				boton_12.setIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/4.png"));
+				
 				if (primeravez) {
 					primeravez=false;
 					seleccionados[12]=true;
@@ -375,7 +385,7 @@ public class Ventana_Memory extends JFrame {
 		});
 		boton_5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				boton_5.setIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/5.png"));
+				
 				if (primeravez) {
 					primeravez=false;
 					seleccionados[5]=true;
@@ -393,7 +403,7 @@ public class Ventana_Memory extends JFrame {
 		});
 		boton_11.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				boton_11.setIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/5.png"));
+				
 				if (primeravez) {
 					primeravez=false;
 					seleccionados[11]=true;
@@ -411,7 +421,7 @@ public class Ventana_Memory extends JFrame {
 		});
 		boton_7.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				boton_7.setIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/7.png"));
+				
 				if (primeravez) {
 					primeravez=false;
 					seleccionados[7]=true;
@@ -429,7 +439,7 @@ public class Ventana_Memory extends JFrame {
 		});
 		boton_10.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				boton_10.setIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/7.png"));
+				
 				if (primeravez) {
 					primeravez=false;
 					seleccionados[10]=true;
@@ -447,7 +457,7 @@ public class Ventana_Memory extends JFrame {
 		});
 		boton_9.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				boton_9.setIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/8.png"));
+				
 				if (primeravez) {
 					primeravez=false;
 					seleccionados[9]=true;
@@ -466,7 +476,7 @@ public class Ventana_Memory extends JFrame {
 		});
 		boton_15.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				boton_15.setIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/8.png"));
+				
 				if (primeravez) {
 					primeravez=false;
 					seleccionados[15]=true;
@@ -493,25 +503,28 @@ public class Ventana_Memory extends JFrame {
 	
 	public void comparar(JToggleButton botona, JToggleButton botonb) {
 		if (botona.getText().equals(botonb.getText())) {
+			if (botona==botonb) {
+				
+			} else {
+		
 			botona.setEnabled(false);
-			botonb.setEnabled(false);
+			botonb.setEnabled(false);}
 		} else {
-//			botona.setEnabled(false);
-//			botonb.setEnabled(false);
 			
 			botona.setSelected(false);
 			botonb.setSelected(false);
+
+			try {
+				TimeUnit.SECONDS.sleep(1);
+				
+			} catch (InterruptedException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+
+			botona.setSelected(false);
+			botonb.setSelected(false);
 			
-			botona.setIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/in.jpeg"));
-			botonb.setIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/in.jpeg"));
-//			try {
-////				boton.setIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/6.png"));
-//				TimeUnit.SECONDS.sleep(1);
-//				
-//			} catch (InterruptedException e1) {
-//				// TODO Auto-generated catch block
-//				e1.printStackTrace();
-//			}
 		}
 		
 	}
