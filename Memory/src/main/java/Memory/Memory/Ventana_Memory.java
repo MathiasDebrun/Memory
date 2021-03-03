@@ -19,6 +19,9 @@ import javax.swing.UIManager;
 import javax.swing.ButtonGroup;
 import javax.swing.JRadioButton;
 import javax.swing.JCheckBox;
+import javax.swing.JDesktopPane;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 public class Ventana_Memory extends JFrame {
 
@@ -27,6 +30,8 @@ public class Ventana_Memory extends JFrame {
 	boolean seleccionados[] = new boolean[] {false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false};
 	JToggleButton botones[]= new JToggleButton[16];
 	boolean primeravez= true;
+	int contador=0;
+	int contadorintentos=0;
 //	Timer tiempo= new Timer();
 	
 	
@@ -51,6 +56,9 @@ public class Ventana_Memory extends JFrame {
 	 * Create the frame.
 	 */
 	public Ventana_Memory() {
+		
+		
+	
 		setTitle("Memory");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 547, 419);
@@ -166,22 +174,26 @@ public class Ventana_Memory extends JFrame {
 		boton_13.setIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/in.jpeg"));
 		boton_14.setIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/in.jpeg"));
 		boton_15.setIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/in.jpeg"));
-		boton.setSelectedIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/6.png"));
-		boton_1.setSelectedIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/6.png"));
-		boton_3.setSelectedIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/2.png"));
-		boton_14.setSelectedIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/2.png"));
-		boton_6.setSelectedIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/1.png"));
-		boton_8.setSelectedIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/1.png"));
-		boton_2.setSelectedIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/3.png"));
-		boton_13.setSelectedIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/3.png"));
-		boton_4.setSelectedIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/4.png"));
-		boton_12.setSelectedIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/4.png"));
-		boton_5.setSelectedIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/5.png"));
-		boton_11.setSelectedIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/5.png"));
-		boton_7.setSelectedIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/7.png"));
-		boton_10.setSelectedIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/7.png"));
-		boton_9.setSelectedIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/8.png"));
-		boton_15.setSelectedIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/8.png"));
+		boton.setSelectedIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/6.jpg"));
+		boton_1.setSelectedIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/6.jpg"));
+		boton_3.setSelectedIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/2.jpg"));
+		boton_14.setSelectedIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/2.jpg"));
+		boton_6.setSelectedIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/1.jpg"));
+		boton_8.setSelectedIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/1.jpg"));
+		boton_2.setSelectedIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/3.jpg"));
+		boton_13.setSelectedIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/3.jpg"));
+		boton_4.setSelectedIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/4.jpeg"));
+		boton_12.setSelectedIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/4.jpeg"));
+		boton_5.setSelectedIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/5.jpeg"));
+		boton_11.setSelectedIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/5.jpeg"));
+		boton_7.setSelectedIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/7.jpg"));
+		boton_10.setSelectedIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/7.jpg"));
+		boton_9.setSelectedIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/8.jpg"));
+		boton_15.setSelectedIcon(new ImageIcon("/home/mathiasdebrun/Escritorio/imagenes/8.jpg"));
+		
+		
+		
+		
 		boton.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent e) {
@@ -197,11 +209,10 @@ public class Ventana_Memory extends JFrame {
 					
 					for (int i=0; i<16; i++) {
 						 if (seleccionados[i]) {
-							 
-							 comparar(boton, botones[i]);
-							 
+							comparar(boton, botones[i]);
 							 primeravez=true;
 							 seleccionados[i]=false;
+							 contadorintentos++;
 						 }
 					}
 				 }
@@ -229,6 +240,7 @@ public class Ventana_Memory extends JFrame {
 							 
 							 primeravez=true;
 							 seleccionados[i]=false;
+							 contadorintentos++;
 						 }
 					}
 				}
@@ -249,6 +261,7 @@ public class Ventana_Memory extends JFrame {
 							 comparar(boton_3, botones[i]);
 							 primeravez=true;
 							 seleccionados[i]=false;
+							 contadorintentos++;
 						 }
 					}
 				}
@@ -267,6 +280,7 @@ public class Ventana_Memory extends JFrame {
 							 comparar(boton_14, botones[i]);
 							 primeravez=true;
 							 seleccionados[i]=false;
+							 contadorintentos++;
 						 }
 					}
 				}
@@ -287,6 +301,7 @@ public class Ventana_Memory extends JFrame {
 							 comparar(boton_6, botones[i]);
 							 primeravez=true;
 							 seleccionados[i]=false;
+							 contadorintentos++;
 						 }
 					}
 				}
@@ -305,6 +320,7 @@ public class Ventana_Memory extends JFrame {
 							 comparar(boton_8, botones[i]);
 							 primeravez=true;
 							 seleccionados[i]=false;
+							 contadorintentos++;
 						 }
 					}
 				}
@@ -324,6 +340,7 @@ public class Ventana_Memory extends JFrame {
 							 comparar(boton_2, botones[i]);
 							 primeravez=true;
 							 seleccionados[i]=false;
+							 contadorintentos++;
 						 }
 					}
 				}
@@ -342,6 +359,7 @@ public class Ventana_Memory extends JFrame {
 							 comparar(boton_13, botones[i]);
 							 primeravez=true;
 							 seleccionados[i]=false;
+							 contadorintentos++;
 						 }
 					}
 				}
@@ -360,6 +378,7 @@ public class Ventana_Memory extends JFrame {
 							 comparar(boton_4, botones[i]);
 							 primeravez=true;
 							 seleccionados[i]=false;
+							 contadorintentos++;
 						 }
 					}
 				}
@@ -378,6 +397,7 @@ public class Ventana_Memory extends JFrame {
 							 comparar(boton_12, botones[i]);
 							 primeravez=true;
 							 seleccionados[i]=false;
+							 contadorintentos++;
 						 }
 					}
 				}
@@ -396,6 +416,7 @@ public class Ventana_Memory extends JFrame {
 							 comparar(boton_5, botones[i]);
 							 primeravez=true;
 							 seleccionados[i]=false;
+							 contadorintentos++;
 						 }
 					}
 				}
@@ -414,6 +435,7 @@ public class Ventana_Memory extends JFrame {
 							 comparar(boton_11, botones[i]);
 							 primeravez=true;
 							 seleccionados[i]=false;
+							 contadorintentos++;
 						 }
 					}
 				}
@@ -432,6 +454,7 @@ public class Ventana_Memory extends JFrame {
 							 comparar(boton_7, botones[i]);
 							 primeravez=true;
 							 seleccionados[i]=false;
+							 contadorintentos++;
 						 }
 					}
 				}
@@ -450,6 +473,7 @@ public class Ventana_Memory extends JFrame {
 							 comparar(boton_10, botones[i]);
 							 primeravez=true;
 							 seleccionados[i]=false;
+							 contadorintentos++;
 						 }
 					}
 				}
@@ -469,6 +493,7 @@ public class Ventana_Memory extends JFrame {
 							 comparar(boton_9, botones[i]);
 							 primeravez=true;
 							 seleccionados[i]=false;
+							 contadorintentos++;
 						 }
 					}
 				}
@@ -488,6 +513,7 @@ public class Ventana_Memory extends JFrame {
 							 comparar(boton_15, botones[i]);
 							 primeravez=true;
 							 seleccionados[i]=false;
+							 contadorintentos++;
 						 }
 					}
 				}
@@ -497,18 +523,22 @@ public class Ventana_Memory extends JFrame {
 	}
 	
 	
-	
-	
-	
-	
 	public void comparar(JToggleButton botona, JToggleButton botonb) {
+		
 		if (botona.getText().equals(botonb.getText())) {
 			if (botona==botonb) {
 				
 			} else {
 		
 			botona.setEnabled(false);
-			botonb.setEnabled(false);}
+			botonb.setEnabled(false);
+			contador++;
+			if (contador==8) {
+				JOptionPane.showMessageDialog(null, "Felicidades, has ganado \n Te ha tomado " +(contadorintentos-6)+ " intentos");
+			  
+			}
+			}
+			
 		} else {
 			
 			botona.setSelected(false);
