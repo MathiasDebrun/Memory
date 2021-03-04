@@ -102,7 +102,6 @@ public class Ventana_Memory extends JFrame {
 		contentPane.add(boton_9);
 
 		JToggleButton boton_10 = new JToggleButton("7");
-		buttonGroup.add(boton_10);
 		boton_10.setBounds(280, 196, 122, 86);
 		contentPane.add(boton_10);
 
