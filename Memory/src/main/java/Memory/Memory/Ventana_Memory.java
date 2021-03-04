@@ -56,9 +56,6 @@ public class Ventana_Memory extends JFrame {
 	 * Create the frame.
 	 */
 	public Ventana_Memory() {
-		
-		
-	
 		setTitle("Memory");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 547, 419);
@@ -141,7 +138,6 @@ public class Ventana_Memory extends JFrame {
 		boton_15.setBounds(414, 295, 122, 86);
 		contentPane.add(boton_15);
 		
-
 		botones[0]=boton;
 		botones[1]=boton_1;
 		botones[2]=boton_2;
@@ -218,26 +214,18 @@ public class Ventana_Memory extends JFrame {
 				 }
 			
 			}
-			
-			
 			});
 		boton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
-				
-			
 				if (primeravez) {
 					primeravez=false;
 					seleccionados[0]=true;
 					
 				} else {
 					;
-					
-					
 					for (int i=0; i<16; i++) {
 						 if (seleccionados[i]) {
 							 comparar(boton_1, botones[i]);
-							 
 							 primeravez=true;
 							 seleccionados[i]=false;
 							 contadorintentos++;
@@ -246,15 +234,12 @@ public class Ventana_Memory extends JFrame {
 				}
 				
 			}});
-		
-		
 		boton_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
 				if (primeravez) {
 					primeravez=false;
 					seleccionados[3]=true;
-					
 				} else {
 					for (int i=0; i<16; i++) {
 						 if (seleccionados[i]) {
