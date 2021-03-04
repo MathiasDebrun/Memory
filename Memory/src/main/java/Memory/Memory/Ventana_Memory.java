@@ -534,7 +534,7 @@ public class Ventana_Memory extends JFrame {
 			botonb.setEnabled(false);
 			contador++;
 			if (contador==8) {
-				JOptionPane.showMessageDialog(null, "Felicidades, has ganado \n Te ha tomado " +(contadorintentos-6)+ " intentos");
+				JOptionPane.showMessageDialog(null, "Felicidades, has ganado \n Te ha tomado " +(contadorintentos-7)+ " intentos");
 			  
 			}
 			}
