@@ -509,7 +509,7 @@ public class Ventana_Memory extends JFrame {
 				contador++;
 				if (contador == 8) {
 					JOptionPane.showMessageDialog(null,
-							"¡Felicidades, has ganado! \nTe ha tomado " + (contadorintentos - 8) + " intentos.");
+							"¡Felicidades, has ganado! \nTe ha tomado " + (contadorintentos -7) + " intentos.");
 
 				}
 			}
