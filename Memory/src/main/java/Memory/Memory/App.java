@@ -8,7 +8,7 @@ public class App
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
-
+		//Invoca al JFrame Memory
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {

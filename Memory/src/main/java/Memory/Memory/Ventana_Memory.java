@@ -162,42 +162,24 @@ public class Ventana_Memory extends JFrame {
 		// Acciones que desencadenarán los diferentes botones
 		// Acción al pulsar el boton
 		boton.addActionListener(new ActionListener() {
-
 			public void actionPerformed(ActionEvent e) {
 				if (primeravez) {
 					primeravez = false;
 					seleccionados[0] = true;
 				} else {
-					for (int i = 0; i < 16; i++) {
-						if (seleccionados[i]) {
-							comparar(boton, botones[i]);
-							primeravez = true;
-							seleccionados[i] = false;
-							contadorintentos++;
-						}
-					}
+					comparar(boton, botones);
 				}
-
 			}
-
 		});
 		// Acción al pulsar el boton_1
 		boton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (primeravez) {
 					primeravez = false;
-					seleccionados[1] = true;
+					seleccionados[0] = true;
 				} else {
-					for (int i = 0; i < 16; i++) {
-						if (seleccionados[i]) {
-							comparar(boton_1, botones[i]);
-							primeravez = true;
-							seleccionados[i] = false;
-							contadorintentos++;
-						}
-					}
+					comparar(boton_1, botones);
 				}
-
 			}
 		});
 		// Acción al pulsar el boton_2
@@ -207,14 +189,7 @@ public class Ventana_Memory extends JFrame {
 					primeravez = false;
 					seleccionados[2] = true;
 				} else {
-					for (int i = 0; i < 16; i++) {
-						if (seleccionados[i]) {
-							comparar(boton_2, botones[i]);
-							primeravez = true;
-							seleccionados[i] = false;
-							contadorintentos++;
-						}
-					}
+					comparar(boton_2, botones);
 				}
 			}
 		});
@@ -225,14 +200,7 @@ public class Ventana_Memory extends JFrame {
 					primeravez = false;
 					seleccionados[3] = true;
 				} else {
-					for (int i = 0; i < 16; i++) {
-						if (seleccionados[i]) {
-							comparar(boton_3, botones[i]);
-							primeravez = true;
-							seleccionados[i] = false;
-							contadorintentos++;
-						}
-					}
+					comparar(boton_3, botones);
 				}
 			}
 		});
@@ -243,14 +211,7 @@ public class Ventana_Memory extends JFrame {
 					primeravez = false;
 					seleccionados[4] = true;
 				} else {
-					for (int i = 0; i < 16; i++) {
-						if (seleccionados[i]) {
-							comparar(boton_4, botones[i]);
-							primeravez = true;
-							seleccionados[i] = false;
-							contadorintentos++;
-						}
-					}
+					comparar(boton_4, botones);
 				}
 			}
 		});
@@ -261,14 +222,7 @@ public class Ventana_Memory extends JFrame {
 					primeravez = false;
 					seleccionados[5] = true;
 				} else {
-					for (int i = 0; i < 16; i++) {
-						if (seleccionados[i]) {
-							comparar(boton_5, botones[i]);
-							primeravez = true;
-							seleccionados[i] = false;
-							contadorintentos++;
-						}
-					}
+					comparar(boton_5, botones);
 				}
 			}
 		});
@@ -279,14 +233,7 @@ public class Ventana_Memory extends JFrame {
 					primeravez = false;
 					seleccionados[6] = true;
 				} else {
-					for (int i = 0; i < 16; i++) {
-						if (seleccionados[i]) {
-							comparar(boton_6, botones[i]);
-							primeravez = true;
-							seleccionados[i] = false;
-							contadorintentos++;
-						}
-					}
+					comparar(boton_6, botones);
 				}
 			}
 		});
@@ -297,14 +244,7 @@ public class Ventana_Memory extends JFrame {
 					primeravez = false;
 					seleccionados[7] = true;
 				} else {
-					for (int i = 0; i < 16; i++) {
-						if (seleccionados[i]) {
-							comparar(boton_7, botones[i]);
-							primeravez = true;
-							seleccionados[i] = false;
-							contadorintentos++;
-						}
-					}
+					comparar(boton_7, botones);
 				}
 			}
 		});
@@ -315,14 +255,7 @@ public class Ventana_Memory extends JFrame {
 					primeravez = false;
 					seleccionados[8] = true;
 				} else {
-					for (int i = 0; i < 16; i++) {
-						if (seleccionados[i]) {
-							comparar(boton_8, botones[i]);
-							primeravez = true;
-							seleccionados[i] = false;
-							contadorintentos++;
-						}
-					}
+					comparar(boton_8, botones);
 				}
 			}
 		});
@@ -333,15 +266,7 @@ public class Ventana_Memory extends JFrame {
 					primeravez = false;
 					seleccionados[9] = true;
 				} else {
-
-					for (int i = 0; i < 16; i++) {
-						if (seleccionados[i]) {
-							comparar(boton_9, botones[i]);
-							primeravez = true;
-							seleccionados[i] = false;
-							contadorintentos++;
-						}
-					}
+					comparar(boton_9, botones);
 				}
 			}
 		});
@@ -352,14 +277,7 @@ public class Ventana_Memory extends JFrame {
 					primeravez = false;
 					seleccionados[10] = true;
 				} else {
-					for (int i = 0; i < 16; i++) {
-						if (seleccionados[i]) {
-							comparar(boton_10, botones[i]);
-							primeravez = true;
-							seleccionados[i] = false;
-							contadorintentos++;
-						}
-					}
+					comparar(boton_10, botones);
 				}
 			}
 		});
@@ -369,15 +287,9 @@ public class Ventana_Memory extends JFrame {
 				if (primeravez) {
 					primeravez = false;
 					seleccionados[11] = true;
+
 				} else {
-					for (int i = 0; i < 16; i++) {
-						if (seleccionados[i]) {
-							comparar(boton_11, botones[i]);
-							primeravez = true;
-							seleccionados[i] = false;
-							contadorintentos++;
-						}
-					}
+					comparar(boton_11, botones);
 				}
 			}
 		});
@@ -388,14 +300,7 @@ public class Ventana_Memory extends JFrame {
 					primeravez = false;
 					seleccionados[12] = true;
 				} else {
-					for (int i = 0; i < 16; i++) {
-						if (seleccionados[i]) {
-							comparar(boton_12, botones[i]);
-							primeravez = true;
-							seleccionados[i] = false;
-							contadorintentos++;
-						}
-					}
+					comparar(boton_12, botones);
 				}
 			}
 		});
@@ -406,14 +311,7 @@ public class Ventana_Memory extends JFrame {
 					primeravez = false;
 					seleccionados[13] = true;
 				} else {
-					for (int i = 0; i < 16; i++) {
-						if (seleccionados[i]) {
-							comparar(boton_13, botones[i]);
-							primeravez = true;
-							seleccionados[i] = false;
-							contadorintentos++;
-						}
-					}
+					comparar(boton_13, botones);
 				}
 			}
 		});
@@ -424,14 +322,7 @@ public class Ventana_Memory extends JFrame {
 					primeravez = false;
 					seleccionados[14] = true;
 				} else {
-					for (int i = 0; i < 16; i++) {
-						if (seleccionados[i]) {
-							comparar(boton_14, botones[i]);
-							primeravez = true;
-							seleccionados[i] = false;
-							contadorintentos++;
-						}
-					}
+					comparar(boton_14, botones);
 				}
 			}
 		});
@@ -442,22 +333,25 @@ public class Ventana_Memory extends JFrame {
 					primeravez = false;
 					seleccionados[15] = true;
 				} else {
-					for (int i = 0; i < 16; i++) {
-						if (seleccionados[i]) {
-							comparar(boton_15, botones[i]);
-							primeravez = true;
-							seleccionados[i] = false;
-							contadorintentos++;
-						}
-					}
+					comparar(boton_15, botones);
 				}
 			}
 		});
 	}
 
 	// Método que realiza la comparación de cartas
-	public void comparar(JToggleButton botonA, JToggleButton botonB) {
+	public void comparar(JToggleButton botonA, JToggleButton arrayBtn[]) {
 		int contador = 0; // Variable que indicará intentos
+		JToggleButton botonB = new JToggleButton();
+		for (int i = 0; i < 16; i++) {
+			if (seleccionados[i]) {
+				botonB = botones[i];
+				seleccionados[i] = false;
+			}
+		}
+		primeravez = true;
+		contadorintentos++;
+
 		if (botonA.getText().equals(botonB.getText())) {
 			if (botonA == botonB) {
 			} else {
@@ -466,10 +360,12 @@ public class Ventana_Memory extends JFrame {
 				contador++;
 				if (contador == 8) {
 					JOptionPane.showMessageDialog(null,
-							"¡Felicidades, has ganado! \nHas cometido " + (contadorintentos - 7) + " fallos.");
+							"¡Felicidades, has ganado! \nHas tenido " + (contadorintentos - 7) + " fallos.");
 				}
 			}
 		} else {
+			botonA.setSelected(false);
+			botonB.setSelected(false);
 			try {
 				TimeUnit.SECONDS.sleep(1);
 			} catch (InterruptedException e1) {
