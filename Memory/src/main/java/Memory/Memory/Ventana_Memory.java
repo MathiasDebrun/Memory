@@ -1,9 +1,6 @@
 package Memory.Memory;
 
 import java.util.concurrent.TimeUnit;
-import java.awt.EventQueue;
-import java.awt.Image;
-
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -11,46 +8,28 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JToggleButton;
 import java.awt.event.ActionListener;
-
 import java.awt.event.ActionEvent;
 
-import javax.swing.ButtonGroup;
+/**
+ * @author Marc Cuenta, Mathias Debrun, Estefania Colombo
+ *
+ */
 
 public class Ventana_Memory extends JFrame {
 
 	private JPanel contentPane;
-	private final ButtonGroup buttonGroup = new ButtonGroup();
 	boolean seleccionados[] = new boolean[] { false, false, false, false, false, false, false, false, false, false,
-			false, false, false, false, false, false };
-	JToggleButton botones[] = new JToggleButton[16];
-	boolean primeravez = true;
-	int contador = 0;
-	int contadorintentos = 0;
-
-	// Timer tiempo= new Timer();
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Ventana_Memory frame = new Ventana_Memory();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+			false, false, false, false, false, false }; // Inicializamos todas las posiciones en false
+	JToggleButton botones[] = new JToggleButton[16]; // Numero de botones
+	boolean primeravez = true; // Variable de control, indica si es la primera vez que se gira la imagen
+	int contadorintentos = 0; // Variable para contabilizar los intentos
 
 	/**
 	 * Create the frame.
 	 */
 	public Ventana_Memory() {
 
+		// Título ventana y dimensiones del panel principal
 		setTitle("Memory");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 547, 419);
@@ -59,6 +38,7 @@ public class Ventana_Memory extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
+		// Botones, dimensiones y números asignados a cada una de ellas
 		JToggleButton boton = new JToggleButton("6");
 		boton.setBounds(12, 0, 122, 86);
 		contentPane.add(boton);
@@ -125,6 +105,7 @@ public class Ventana_Memory extends JFrame {
 		boton_15.setBounds(414, 295, 122, 86);
 		contentPane.add(boton_15);
 
+		// Asignamos a cada posicion de la matriz un nombre
 		botones[0] = boton;
 		botones[1] = boton_1;
 		botones[2] = boton_2;
@@ -142,6 +123,7 @@ public class Ventana_Memory extends JFrame {
 		botones[14] = boton_14;
 		botones[15] = boton_15;
 
+		// Imagen de fondo para todos los botones
 		boton.setIcon(new ImageIcon("/Users/estefaniacr/git/Memory/Memory/src/main/java/Imagenes/fondo-boton.png"));
 		boton_1.setIcon(new ImageIcon("/Users/estefaniacr/git/Memory/Memory/src/main/java/Imagenes/fondo-boton.png"));
 		boton_2.setIcon(new ImageIcon("/Users/estefaniacr/git/Memory/Memory/src/main/java/Imagenes/fondo-boton.png"));
@@ -159,6 +141,7 @@ public class Ventana_Memory extends JFrame {
 		boton_14.setIcon(new ImageIcon("/Users/estefaniacr/git/Memory/Memory/src/main/java/Imagenes/fondo-boton.png"));
 		boton_15.setIcon(new ImageIcon("/Users/estefaniacr/git/Memory/Memory/src/main/java/Imagenes/fondo-boton.png"));
 
+		// Imagenes cartas Memory
 		boton.setSelectedIcon(new ImageIcon("/Users/estefaniacr/git/Memory/Memory/src/main/java/Imagenes/6.png"));
 		boton_1.setSelectedIcon(new ImageIcon("/Users/estefaniacr/git/Memory/Memory/src/main/java/Imagenes/6.png"));
 		boton_3.setSelectedIcon(new ImageIcon("/Users/estefaniacr/git/Memory/Memory/src/main/java/Imagenes/2.png"));
@@ -176,17 +159,15 @@ public class Ventana_Memory extends JFrame {
 		boton_9.setSelectedIcon(new ImageIcon("/Users/estefaniacr/git/Memory/Memory/src/main/java/Imagenes/8.png"));
 		boton_15.setSelectedIcon(new ImageIcon("/Users/estefaniacr/git/Memory/Memory/src/main/java/Imagenes/8.png"));
 
+		// Acciones que desencadenarán los diferentes botones
+		// Acción al pulsar el boton
 		boton.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
-
 				if (primeravez) {
-
 					primeravez = false;
 					seleccionados[0] = true;
-
 				} else {
-
 					for (int i = 0; i < 16; i++) {
 						if (seleccionados[i]) {
 							comparar(boton, botones[i]);
@@ -200,20 +181,16 @@ public class Ventana_Memory extends JFrame {
 			}
 
 		});
+		// Acción al pulsar el boton_1
 		boton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
 				if (primeravez) {
 					primeravez = false;
-					seleccionados[0] = true;
-
+					seleccionados[1] = true;
 				} else {
-					;
-
 					for (int i = 0; i < 16; i++) {
 						if (seleccionados[i]) {
 							comparar(boton_1, botones[i]);
-
 							primeravez = true;
 							seleccionados[i] = false;
 							contadorintentos++;
@@ -223,92 +200,12 @@ public class Ventana_Memory extends JFrame {
 
 			}
 		});
-
-		boton_3.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-
-				if (primeravez) {
-					primeravez = false;
-					seleccionados[3] = true;
-
-				} else {
-					for (int i = 0; i < 16; i++) {
-						if (seleccionados[i]) {
-							comparar(boton_3, botones[i]);
-							primeravez = true;
-							seleccionados[i] = false;
-							contadorintentos++;
-						}
-					}
-				}
-			}
-		});
-		boton_14.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-
-				if (primeravez) {
-					primeravez = false;
-					seleccionados[14] = true;
-
-				} else {
-					for (int i = 0; i < 16; i++) {
-						if (seleccionados[i]) {
-							comparar(boton_14, botones[i]);
-							primeravez = true;
-							seleccionados[i] = false;
-							contadorintentos++;
-						}
-					}
-				}
-			}
-		});
-		boton_6.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-
-				if (primeravez) {
-
-					primeravez = false;
-					seleccionados[6] = true;
-
-				} else {
-					for (int i = 0; i < 16; i++) {
-						if (seleccionados[i]) {
-							comparar(boton_6, botones[i]);
-							primeravez = true;
-							seleccionados[i] = false;
-							contadorintentos++;
-						}
-					}
-				}
-			}
-		});
-		boton_8.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-
-				if (primeravez) {
-					primeravez = false;
-					seleccionados[8] = true;
-
-				} else {
-					for (int i = 0; i < 16; i++) {
-						if (seleccionados[i]) {
-							comparar(boton_8, botones[i]);
-							primeravez = true;
-							seleccionados[i] = false;
-							contadorintentos++;
-						}
-					}
-				}
-			}
-		});
-
+		// Acción al pulsar el boton_2
 		boton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
 				if (primeravez) {
 					primeravez = false;
 					seleccionados[2] = true;
-
 				} else {
 					for (int i = 0; i < 16; i++) {
 						if (seleccionados[i]) {
@@ -321,17 +218,16 @@ public class Ventana_Memory extends JFrame {
 				}
 			}
 		});
-		boton_13.addActionListener(new ActionListener() {
+		// Acción al pulsar el boton_3
+		boton_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
 				if (primeravez) {
 					primeravez = false;
-					seleccionados[13] = true;
-
+					seleccionados[3] = true;
 				} else {
 					for (int i = 0; i < 16; i++) {
 						if (seleccionados[i]) {
-							comparar(boton_13, botones[i]);
+							comparar(boton_3, botones[i]);
 							primeravez = true;
 							seleccionados[i] = false;
 							contadorintentos++;
@@ -340,13 +236,12 @@ public class Ventana_Memory extends JFrame {
 				}
 			}
 		});
+		// Acción al pulsar el boton_4
 		boton_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
 				if (primeravez) {
 					primeravez = false;
 					seleccionados[4] = true;
-
 				} else {
 					for (int i = 0; i < 16; i++) {
 						if (seleccionados[i]) {
@@ -359,32 +254,12 @@ public class Ventana_Memory extends JFrame {
 				}
 			}
 		});
-		boton_12.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-
-				if (primeravez) {
-					primeravez = false;
-					seleccionados[12] = true;
-
-				} else {
-					for (int i = 0; i < 16; i++) {
-						if (seleccionados[i]) {
-							comparar(boton_12, botones[i]);
-							primeravez = true;
-							seleccionados[i] = false;
-							contadorintentos++;
-						}
-					}
-				}
-			}
-		});
+		// Acción al pulsar el boton_5
 		boton_5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
 				if (primeravez) {
 					primeravez = false;
 					seleccionados[5] = true;
-
 				} else {
 					for (int i = 0; i < 16; i++) {
 						if (seleccionados[i]) {
@@ -397,17 +272,16 @@ public class Ventana_Memory extends JFrame {
 				}
 			}
 		});
-		boton_11.addActionListener(new ActionListener() {
+		// Acción al pulsar el boton_6
+		boton_6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
 				if (primeravez) {
 					primeravez = false;
-					seleccionados[11] = true;
-
+					seleccionados[6] = true;
 				} else {
 					for (int i = 0; i < 16; i++) {
 						if (seleccionados[i]) {
-							comparar(boton_11, botones[i]);
+							comparar(boton_6, botones[i]);
 							primeravez = true;
 							seleccionados[i] = false;
 							contadorintentos++;
@@ -416,13 +290,12 @@ public class Ventana_Memory extends JFrame {
 				}
 			}
 		});
+		// Acción al pulsar el boton_7
 		boton_7.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
 				if (primeravez) {
 					primeravez = false;
 					seleccionados[7] = true;
-
 				} else {
 					for (int i = 0; i < 16; i++) {
 						if (seleccionados[i]) {
@@ -435,17 +308,16 @@ public class Ventana_Memory extends JFrame {
 				}
 			}
 		});
-		boton_10.addActionListener(new ActionListener() {
+		// Accion al pulsar el boton_8
+		boton_8.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
 				if (primeravez) {
 					primeravez = false;
-					seleccionados[10] = true;
-
+					seleccionados[8] = true;
 				} else {
 					for (int i = 0; i < 16; i++) {
 						if (seleccionados[i]) {
-							comparar(boton_10, botones[i]);
+							comparar(boton_8, botones[i]);
 							primeravez = true;
 							seleccionados[i] = false;
 							contadorintentos++;
@@ -454,13 +326,12 @@ public class Ventana_Memory extends JFrame {
 				}
 			}
 		});
+		// Acción al pulsar el boton_9
 		boton_9.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
 				if (primeravez) {
 					primeravez = false;
 					seleccionados[9] = true;
-
 				} else {
 
 					for (int i = 0; i < 16; i++) {
@@ -474,15 +345,103 @@ public class Ventana_Memory extends JFrame {
 				}
 			}
 		});
+		// Acción al pulsar el boton_10
+		boton_10.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (primeravez) {
+					primeravez = false;
+					seleccionados[10] = true;
+				} else {
+					for (int i = 0; i < 16; i++) {
+						if (seleccionados[i]) {
+							comparar(boton_10, botones[i]);
+							primeravez = true;
+							seleccionados[i] = false;
+							contadorintentos++;
+						}
+					}
+				}
+			}
+		});
+		// Acción al pulsar el boton_11
+		boton_11.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (primeravez) {
+					primeravez = false;
+					seleccionados[11] = true;
+				} else {
+					for (int i = 0; i < 16; i++) {
+						if (seleccionados[i]) {
+							comparar(boton_11, botones[i]);
+							primeravez = true;
+							seleccionados[i] = false;
+							contadorintentos++;
+						}
+					}
+				}
+			}
+		});
+		// Acción al pulsar el boton_12
+		boton_12.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (primeravez) {
+					primeravez = false;
+					seleccionados[12] = true;
+				} else {
+					for (int i = 0; i < 16; i++) {
+						if (seleccionados[i]) {
+							comparar(boton_12, botones[i]);
+							primeravez = true;
+							seleccionados[i] = false;
+							contadorintentos++;
+						}
+					}
+				}
+			}
+		});
+		// Acción al pulsar el boton_13
+		boton_13.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (primeravez) {
+					primeravez = false;
+					seleccionados[13] = true;
+				} else {
+					for (int i = 0; i < 16; i++) {
+						if (seleccionados[i]) {
+							comparar(boton_13, botones[i]);
+							primeravez = true;
+							seleccionados[i] = false;
+							contadorintentos++;
+						}
+					}
+				}
+			}
+		});
+		// Acción al pulsar el boton_14
+		boton_14.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (primeravez) {
+					primeravez = false;
+					seleccionados[14] = true;
+				} else {
+					for (int i = 0; i < 16; i++) {
+						if (seleccionados[i]) {
+							comparar(boton_14, botones[i]);
+							primeravez = true;
+							seleccionados[i] = false;
+							contadorintentos++;
+						}
+					}
+				}
+			}
+		});
+		// Acción al pulsar el boton_15
 		boton_15.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
 				if (primeravez) {
 					primeravez = false;
 					seleccionados[15] = true;
-
 				} else {
-
 					for (int i = 0; i < 16; i++) {
 						if (seleccionados[i]) {
 							comparar(boton_15, botones[i]);
@@ -494,44 +453,30 @@ public class Ventana_Memory extends JFrame {
 				}
 			}
 		});
-
 	}
 
-	public void comparar(JToggleButton botona, JToggleButton botonb) {
-
-		if (botona.getText().equals(botonb.getText())) {
-			if (botona == botonb) {
-
+	// Método que realiza la comparación de cartas
+	public void comparar(JToggleButton botonA, JToggleButton botonB) {
+		int contador = 0; // Variable que indicará intentos
+		if (botonA.getText().equals(botonB.getText())) {
+			if (botonA == botonB) {
 			} else {
-
-				botona.setEnabled(false);
-				botonb.setEnabled(false);
+				botonA.setEnabled(false);
+				botonB.setEnabled(false);
 				contador++;
 				if (contador == 8) {
 					JOptionPane.showMessageDialog(null,
-							"¡Felicidades, has ganado! \nTe ha tomado " + (contadorintentos -7) + " intentos.");
-
+							"¡Felicidades, has ganado! \nHas cometido " + (contadorintentos - 7) + " fallos.");
 				}
 			}
-
 		} else {
-
-			botona.setSelected(false);
-			botonb.setSelected(false);
-
 			try {
 				TimeUnit.SECONDS.sleep(1);
-
 			} catch (InterruptedException e1) {
-				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
-
-			botona.setSelected(false);
-			botonb.setSelected(false);
-
+			botonA.setSelected(false);
+			botonB.setSelected(false);
 		}
-
 	}
-
 }
